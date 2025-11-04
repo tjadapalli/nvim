@@ -23,6 +23,8 @@ require("lazy").setup({
 		end
 	},
 	{"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
---	'ThePrimeagen/vim-be-good'
+	"ThePrimeagen/vim-be-good",
+	"ThePrimeagen/harpoon",
+	"mbbill/undotree",
 }, {})
 
