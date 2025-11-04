@@ -26,5 +26,6 @@ require("lazy").setup({
 	"ThePrimeagen/vim-be-good",
 	"ThePrimeagen/harpoon",
 	"mbbill/undotree",
+	"tpope/vim-fugitive",
 }, {})
 
