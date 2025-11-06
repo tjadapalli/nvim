@@ -51,9 +51,21 @@ require("lazy").setup({
 					},
 				},
 			},
-		}
+		},
 
+		--[[ {
+			"nvim-tree/nvim-tree.lua",
+			version = "*",
+			lazy = false,
+			dependencies = {
+				"nvim-tree/nvim-web-devicons",
+			},
+			config = function()
+				require("nvim-tree").setup {}
+			end,
+		}, ]]
 		-- look into https://github.com/nvim-mini/mini.nvim
+		-- look into https://github.com/rmagatti/auto-session
 	},
 	defaults = {
 		-- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
