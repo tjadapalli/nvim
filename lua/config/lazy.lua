@@ -52,7 +52,8 @@ require("lazy").setup({
 				},
 			},
 		},
-
+		-- This pulls in config for various languages 
+		"neovim/nvim-lspconfig",
 		--[[ {
 			"nvim-tree/nvim-tree.lua",
 			version = "*",
