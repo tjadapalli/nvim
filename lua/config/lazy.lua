@@ -40,6 +40,20 @@ require("lazy").setup({
 		"ThePrimeagen/harpoon",
 		"mbbill/undotree",
 		"tpope/vim-fugitive",
+		{
+			"mason-org/mason.nvim",
+			opts = {
+				ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					},
+				},
+			},
+		}
+
+		-- look into https://github.com/nvim-mini/mini.nvim
 	},
 	defaults = {
 		-- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
