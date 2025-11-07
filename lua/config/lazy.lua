@@ -97,7 +97,14 @@ require("lazy").setup({
 			dependencies = {
 				"nvimtools/none-ls.nvim",
 			},
-		}
+		},
+		-- To enable codeium, uncomment below plugin and look at 
+		-- https://github.com/Exafunction/windsurf.vim#-installation-options
+		-- to auth and enable this plugn
+		--[[{
+			'Exafunction/windsurf.vim',
+			event = 'BufEnter'
+		} ]]--
 		--[[ {
 			"nvim-tree/nvim-tree.lua",
 			version = "*",
