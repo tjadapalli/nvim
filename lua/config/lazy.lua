@@ -31,15 +31,16 @@ require("lazy").setup({
 			end
 		},
 		{
-			"nvim-treesitter/nvim-treesitter", 
+			"nvim-treesitter/nvim-treesitter",
 			branch = 'master',
-			lazy = false, 
+			lazy = false,
 			build = ":TSUpdate"
 		},
 		"ThePrimeagen/vim-be-good",
 		"ThePrimeagen/harpoon",
 		"mbbill/undotree",
 		"tpope/vim-fugitive",
+		--------- These three plugins work together
 		{
 			"mason-org/mason.nvim",
 			opts = {
@@ -52,8 +53,44 @@ require("lazy").setup({
 				},
 			},
 		},
+		"mason-org/mason-lspconfig.nvim",
 		-- This pulls in config for various languages 
 		"neovim/nvim-lspconfig",
+		---------
+		{ 'nvim-mini/mini.nvim', version = '*' },
+		{
+			'saghen/blink.cmp',
+			dependencies = { 'rafamadriz/friendly-snippets' },
+
+			-- use a release tag to download pre-built binaries
+			version = '1.*',
+
+			opts = {
+				-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+				-- 'super-tab' for mappings similar to vscode (tab to accept)
+				-- 'enter' for enter to accept
+				-- 'none' for no mappings
+				--
+				-- All presets have the following mappings:
+				-- C-space: Open menu or open docs if already open
+				-- C-n/C-p or Up/Down: Select next/previous item
+				-- C-e: Hide menu
+				-- C-k: Toggle signature help (if signature.enabled = true)
+				--
+				-- See :h blink-cmp-config-keymap for defining your own keymap
+				keymap = { preset = 'default' },
+
+				appearance = {
+					nerd_font_variant = 'mono'
+				},
+
+				completion = { documentation = { auto_show = false } },
+
+				signature = { enabled = true },
+
+			},
+			opts_extend = { "sources.default" }
+		}
 		--[[ {
 			"nvim-tree/nvim-tree.lua",
 			version = "*",
@@ -80,7 +117,7 @@ require("lazy").setup({
 	install = {},
 	checker = {
 		enabled = true, -- check for plugin updates periodically
-		notify = true, -- notify on update
+		notify = false, -- notify on update
 	}, -- automatically check for plugin updates
 	performance = {
 		-- Learn about this later
