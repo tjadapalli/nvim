@@ -19,6 +19,23 @@ for _, server in ipairs(servers) do
 	vim.lsp.enable(server)
 end
 
+-- XXX: Add formattes to be installed and enabled like black for py3
+require("mason-null-ls").setup({
+  ensure_installed = { "black" }
+})
+
+-- init.lua or plugins.lua
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.formatting.black,
+    },
+    on_attach = function(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", { noremap = true, silent = true })
+        end
+    end,
+})
+
 vim.diagnostic.config({
 	virtual_text = true,  -- show inline messages
 	signs = true,         -- show signs in the gutter

@@ -90,6 +90,13 @@ require("lazy").setup({
 
 			},
 			opts_extend = { "sources.default" }
+		},
+		{
+			"jay-babu/mason-null-ls.nvim",
+			event = { "BufReadPre", "BufNewFile" },
+			dependencies = {
+				"nvimtools/none-ls.nvim",
+			},
 		}
 		--[[ {
 			"nvim-tree/nvim-tree.lua",
